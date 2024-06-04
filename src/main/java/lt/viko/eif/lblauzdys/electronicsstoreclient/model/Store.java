@@ -20,9 +20,9 @@ public class Store {
 
 	private String Location;
 
-	private List<Shelf> Shelves = new ArrayList<>();
+	private List<Shelf> Shelves = new ArrayList<>(); //// List of shelves in the store
 
-	public Store(String name, String location) {
+	public Store(String name, String location) { //Constructor with name and location parameters
 		Name = name;
 		Location = location;
 	}
@@ -31,7 +31,7 @@ public class Store {
 	}
 
 	@Override
-	public String toString() {
+	public String toString() { //Converts the store details to a string representation
 		return String.format("Store:\n" +
 						"\tName: %s\n" +
 						"\tLocation: %s\n" +
@@ -41,6 +41,7 @@ public class Store {
 				constructInventoryList());
 	}
 
+	//Constructs a string representation of the inventory list. Return A string containing details of all shelves in the store.
 	private String constructInventoryList() {
 		String result = "";
 		for (Shelf shelf : Shelves) {
@@ -49,6 +50,7 @@ public class Store {
 		return result;
 	}
 
+	//Getter and setter
 	@XmlElement(name = "Shelves")
 	public List<Shelf> getShelves() {
 		return Shelves;

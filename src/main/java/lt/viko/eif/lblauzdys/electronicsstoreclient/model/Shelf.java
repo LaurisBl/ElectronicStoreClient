@@ -16,13 +16,13 @@ import java.util.List;
 
 public class Shelf {
 	private int ShelfID;
-	private List<Computer> Computers = new ArrayList<>();
+	private List<Computer> Computers = new ArrayList<>(); //List of computers on the shelf
 
 	public Shelf(int shelfID) {
 		ShelfID = shelfID;
-	}
+	} //constructor with shelfID parameter.
 
-	public Shelf() {
+	public Shelf() { //default constructor
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class Shelf {
 				constructInventoryList());
 	}
 
-	private String constructInventoryList() {
+	private String constructInventoryList() { //Constructs a string representation of the inventory list.
 		String result = "";
 		for (Computer computer : Computers) {
 			result += computer;
@@ -42,6 +42,7 @@ public class Shelf {
 		return result;
 	}
 
+	//getter and setter.
 	@XmlAttribute(name = "ID")
 	public int getShelfID() {
 		return ShelfID;
